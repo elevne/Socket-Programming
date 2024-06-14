@@ -47,6 +47,7 @@ class TokenHandler extends Thread {
             Server.INFO_LIST.add(token);
             clientSocket.close();
             if (Server.INFO_LIST.size() == 5) {
+                System.out.println(Server.INFO_LIST);
                 writer.println(Server.INFO_LIST.toString());
             }
         } catch (IOException e) {
