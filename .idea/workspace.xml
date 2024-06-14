@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="887dbb84-1a6c-4772-b969-4df369026718" name="Changes" comment="Server 수정 (2)">
+    <list default="true" id="887dbb84-1a6c-4772-b969-4df369026718" name="Changes" comment="Server 수정 (3)">
       <change afterPath="$PROJECT_DIR$/src/main/java/MyServerConnector.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tmp/ClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +112,7 @@
       <workItem from="1717999865111" duration="1234000" />
       <workItem from="1718166233558" duration="403000" />
       <workItem from="1718170271853" duration="566000" />
-      <workItem from="1718334713273" duration="1122000" />
+      <workItem from="1718334713273" duration="2098000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -145,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718335613762</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Server 수정 (3)">
+      <option name="closed" value="true" />
+      <created>1718336030271</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718336030271</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +175,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="Server 수정" />
     <MESSAGE value="Server 수정 (2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server 수정 (2)" />
+    <MESSAGE value="Server 수정 (3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server 수정 (3)" />
   </component>
 </project>
