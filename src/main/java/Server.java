@@ -17,9 +17,18 @@ public class Server {
                 PrintWriter writer = new PrintWriter(myClient.getOutputStream())) {
                 INFO_LIST = new Vector<>();
                 System.out.println("Server is running...");
-                while (true) {
+                int i = 0;
+                while (i < 5) {
+                    i++;
                     Socket clientSocket = serverSocket.accept();
                     new TokenHandler(clientSocket, writer).start();
+                }
+                boolean x = true;
+                while (x) {
+                    if (Server.INFO_LIST.size() == 5) {
+                        writer.println(Server.INFO_LIST.toString());
+                        x = false;
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -46,10 +55,6 @@ class TokenHandler extends Thread {
             System.out.println(token);
             Server.INFO_LIST.add(token);
             clientSocket.close();
-            if (Server.INFO_LIST.size() == 5) {
-                System.out.println(Server.INFO_LIST);
-                writer.println(Server.INFO_LIST.toString());
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

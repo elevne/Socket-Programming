@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="887dbb84-1a6c-4772-b969-4df369026718" name="Changes" comment="Server 수정">
+    <list default="true" id="887dbb84-1a6c-4772-b969-4df369026718" name="Changes" comment="Server 수정 (2)">
       <change afterPath="$PROJECT_DIR$/src/main/java/MyServerConnector.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tmp/ClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +111,7 @@
       <workItem from="1717999865111" duration="1234000" />
       <workItem from="1718166233558" duration="403000" />
       <workItem from="1718170271853" duration="566000" />
-      <workItem from="1718334713273" duration="753000" />
+      <workItem from="1718334713273" duration="1122000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -138,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718335181955</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Server 수정 (2)">
+      <option name="closed" value="true" />
+      <created>1718335613762</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718335613762</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +165,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="Server 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server 수정" />
+    <MESSAGE value="Server 수정 (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server 수정 (2)" />
   </component>
 </project>
