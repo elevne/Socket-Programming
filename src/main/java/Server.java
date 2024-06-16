@@ -7,7 +7,6 @@ import java.util.concurrent.Executors;
 
 public class Server {
     private static final int SERVER_PORT = 40000;
-    private static final int THREAD_POOL_SIZE = 10;
     public static List<String> INFO_LIST = new Vector<>();
 
     public static int j = 0;
@@ -15,10 +14,7 @@ public class Server {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(SERVER_PORT)) {
             try (Socket myClient = serverSocket.accept();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(myClient.getInputStream()));
                 PrintWriter writer = new PrintWriter(myClient.getOutputStream())) {
-                INFO_LIST = new Vector<>();
-                System.out.println("Server is running...");
                 int i = 0;
                 j = 0;
                 while (i < 5) {
@@ -58,7 +54,6 @@ class TokenHandler extends Thread {
     public void run() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));) {
             String token = reader.readLine();
-            System.out.println(token);
             Server.INFO_LIST.add(token);
             clientSocket.close();
             Server.j--;
