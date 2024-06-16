@@ -20,7 +20,7 @@ public class Server {
                 while (i < 5) {
                     i++;
                     j++;
-                    if (j <= 3) {
+                    if (j <= 2) {
                         Socket clientSocket = serverSocket.accept();
                         new TokenHandler(clientSocket, writer).start();
                     }
