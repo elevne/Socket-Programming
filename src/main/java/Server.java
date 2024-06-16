@@ -15,8 +15,6 @@ public class Server {
             try (Socket myClient = serverSocket.accept();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(myClient.getInputStream()));
                 PrintWriter writer = new PrintWriter(myClient.getOutputStream())) {
-                INFO_LIST = new Vector<>();
-                System.out.println("Server is running...");
                 int i = 0;
                 while (i < 5) {
                     i++;
@@ -26,7 +24,7 @@ public class Server {
                 boolean x = true;
                 while (x) {
                     if (Server.INFO_LIST.size() == 5) {
-                        writer.println(Server.INFO_LIST.toString());
+                        writer.println(Server.INFO_LIST);
                         x = false;
                     }
                 }
@@ -52,7 +50,6 @@ class TokenHandler extends Thread {
     public void run() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));) {
             String token = reader.readLine();
-            System.out.println(token);
             Server.INFO_LIST.add(token);
             clientSocket.close();
         } catch (IOException e) {
