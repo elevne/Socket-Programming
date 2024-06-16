@@ -16,11 +16,11 @@ public class Server {
             try (Socket myClient = serverSocket.accept();
                 PrintWriter writer = new PrintWriter(myClient.getOutputStream())) {
                 int i = 0;
-                j = 0;
+                j = 1;
                 while (i < 5) {
                     i++;
                     j++;
-                    if (j <= 2) {
+                    if (j <= 3) {
                         Socket clientSocket = serverSocket.accept();
                         new TokenHandler(clientSocket, writer).start();
                     }
