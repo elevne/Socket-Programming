@@ -18,9 +18,9 @@ public class Server {
                 int i = 0;
                 j = 1;
                 while (i < 5) {
-                    i++;
-                    j++;
                     if (j <= 3) {
+                        i++;
+                        j++;
                         Socket clientSocket = serverSocket.accept();
                         new TokenHandler(clientSocket, writer).start();
                     }
