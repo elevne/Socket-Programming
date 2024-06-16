@@ -10,21 +10,29 @@ public class Server {
     private static final int THREAD_POOL_SIZE = 10;
     public static List<String> INFO_LIST = new Vector<>();
 
+    public static int j = 0;
+
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(SERVER_PORT)) {
             try (Socket myClient = serverSocket.accept();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(myClient.getInputStream()));
                 PrintWriter writer = new PrintWriter(myClient.getOutputStream())) {
+                INFO_LIST = new Vector<>();
+                System.out.println("Server is running...");
                 int i = 0;
+                j = 0;
                 while (i < 5) {
                     i++;
-                    Socket clientSocket = serverSocket.accept();
-                    new TokenHandler(clientSocket, writer).start();
+                    j++;
+                    if (j <= 3) {
+                        Socket clientSocket = serverSocket.accept();
+                        new TokenHandler(clientSocket, writer).start();
+                    }
                 }
                 boolean x = true;
                 while (x) {
                     if (Server.INFO_LIST.size() == 5) {
-                        writer.println(Server.INFO_LIST);
+                        writer.println(Server.INFO_LIST.toString());
                         x = false;
                     }
                 }
@@ -50,8 +58,10 @@ class TokenHandler extends Thread {
     public void run() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));) {
             String token = reader.readLine();
+            System.out.println(token);
             Server.INFO_LIST.add(token);
             clientSocket.close();
+            Server.j--;
         } catch (IOException e) {
             e.printStackTrace();
         }
