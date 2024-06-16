@@ -10,8 +10,6 @@ public class Server {
     private static final int THREAD_POOL_SIZE = 10;
     public static List<String> INFO_LIST = new Vector<>();
 
-    public static int j = 0;
-
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(SERVER_PORT)) {
             try (Socket myClient = serverSocket.accept();
@@ -20,14 +18,10 @@ public class Server {
                 INFO_LIST = new Vector<>();
                 System.out.println("Server is running...");
                 int i = 0;
-                j = 0;
                 while (i < 5) {
                     i++;
-                    j++;
-                    if (j <= 3) {
-                        Socket clientSocket = serverSocket.accept();
-                        new TokenHandler(clientSocket, writer).start();
-                    }
+                    Socket clientSocket = serverSocket.accept();
+                    new TokenHandler(clientSocket, writer).start();
                 }
                 boolean x = true;
                 while (x) {
@@ -61,7 +55,6 @@ class TokenHandler extends Thread {
             System.out.println(token);
             Server.INFO_LIST.add(token);
             clientSocket.close();
-            Server.j--;
         } catch (IOException e) {
             e.printStackTrace();
         }
