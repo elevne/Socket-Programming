@@ -2,10 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.net.Socket;
-import java.net.SocketException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Client {
     public static final String SERVER_DOMAIN_NAME = "ec2-52-79-217-87.ap-northeast-2.compute.amazonaws.com";
@@ -13,8 +11,8 @@ public class Client {
     public static final String MY_SERVER_IP = "13.124.209.6";
     public static final int MY_SERVER_PORT = 40000;
 
-    public static void main(String[] args) {
-        String SERVER_IP = DNSResolver.requestDNS(SERVER_DOMAIN_NAME);
+    public static void main(String[] args) throws Exception {
+        String SERVER_IP = InetAddress.getByName(SERVER_DOMAIN_NAME).getHostAddress();
         try (
                 Socket socket = new Socket(SERVER_IP, SERVER_PORT);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -38,7 +36,6 @@ public class Client {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            System.exit(0);
         }
     }
 

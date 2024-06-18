@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.ExecutorService;
@@ -7,7 +8,7 @@ import java.util.concurrent.Executors;
 
 public class Server {
     private static final int SERVER_PORT = 40000;
-    public static List<String> INFO_LIST = new Vector<>();
+    public static List<String> INFO_LIST = new ArrayList<>();
 
     public static int j = 0;
 
@@ -35,7 +36,6 @@ public class Server {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            serverSocket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
